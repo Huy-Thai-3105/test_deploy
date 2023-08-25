@@ -1,0 +1,30 @@
+const userRoute = require('./user.route')
+const houseRoute = require('./house.route')
+const roomRoute = require('./room.route')
+const lightRoute = require('./light.route')
+const deviceRoute = require('./device.route')
+const air_condition = require('./air_condition.route')
+const eventsHandle = require('./eventsHandle.route')
+const doorRoute = require('./door.route')
+const pumpRoute = require('./pump.route')
+const recordRoute = require('./record.route')
+const authRoute = require('./auth.route')
+const verifyJWT = require('../middlewares/verifyJWT')
+
+const route = (app) => {
+  app.use('/auth', authRoute)
+  // app.use(verifyJWT)
+  app.use('/user', userRoute)
+  app.use('/house', houseRoute)
+  app.use('/room', roomRoute)
+  app.use('/device', deviceRoute)
+  app.use('/light', lightRoute)
+  app.use('/record', recordRoute)
+  app.use('/airCondition', air_condition)
+  app.use('/events', eventsHandle)
+  app.use('/door', doorRoute)
+  app.use('/pump', pumpRoute)
+  app.use('/record', recordRoute)
+}
+
+module.exports = route
